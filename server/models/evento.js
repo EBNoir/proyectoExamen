@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 
 const eventoSchema = new mongoose.Schema({
-    titulos: String,
-    descrpition: String,
+    titulo: String,
+    descripcion: String,
     imagen: String
 });
 

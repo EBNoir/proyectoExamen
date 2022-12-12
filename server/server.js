@@ -4,10 +4,10 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const {ApolloServer, gql} = require('apollo-server-express');
 const Evento = require('./models/evento');
-mongoose.connect('mongodb+srv://Erick:bopo2001@cluster0.r8q0yal.mongodb.net/test',
-                {userNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect('mongodb+srv://Erick:bopo1234@cluster0.r8q0yal.mongodb.net/test',
+                {useNewUrlParser: true, useUnifiedTopology: true});
 
-const TypeDefs = gql`
+const typeDefs = gql`
 type Evento{
     id: ID!
     titulo: String!
@@ -51,7 +51,7 @@ const corsOptions = {
 }
 
 async function startServer(){
-    const apolloServer = new ApolloServer({TypeDefs, resolvers, corsOptions});
+    const apolloServer = new ApolloServer({typeDefs, resolvers, corsOptions});
     await apolloServer.start();
     apolloServer.applyMiddleware({app, cors:false});
 }
