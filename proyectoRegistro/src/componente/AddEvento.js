@@ -37,7 +37,8 @@ export default function AddEvento(){
             addE({ variables:{
                 titulo: formState.titulo,
                 descripcion: formState.descripcion,
-                imagen: formState.imagen
+                imagen: formState.imagen,
+                fecha: formState.fecha
         }})
         }}>
             <div className='row'>
