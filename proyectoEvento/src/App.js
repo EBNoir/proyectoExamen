@@ -8,7 +8,7 @@ const GET_EVENTOS = gql`
         getEventos{
             titulo
             descripcion
-            imagen  
+            imagen
         }
     }
 `
@@ -28,7 +28,7 @@ function App(){
                                     <h4 className='card-title'>{titulo}</h4>
                                     <p className='card-text'>{descripcion}</p>
                                     <img className='card-img-bottom w-100'
-                                    src = {process.env.PUBLIC_URL + ".../static/images/" + imagen}
+                                    src = {process.env.PUBLIC_URL + "./static/images/" + imagen}
                                     alt = "Card image"/>
                                 </div>
                             </div>
