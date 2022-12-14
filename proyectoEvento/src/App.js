@@ -9,6 +9,7 @@ const GET_EVENTOS = gql`
             titulo
             descripcion
             imagen
+            fecha
         }
     }
 `
@@ -20,13 +21,14 @@ function App(){
     return(
         <div className='container'>
             <div className='row'>{
-                data.getEventos.map(({titulo, descripcion, imagen})=>{
+                data.getEventos.map(({titulo, descripcion, imagen, fecha})=>{
                     return (
                         <div className='col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2'>
                             <div className='card'>
                                 <div className='card-body'>
                                     <h4 className='card-title'>{titulo}</h4>
                                     <p className='card-text'>{descripcion}</p>
+                                    <p className='card-text' alt= "empty">{fecha}</p>
                                     <img className='card-img-bottom w-100'
                                     src = {process.env.PUBLIC_URL + "./static/images/" + imagen}
                                     alt = "Card image"/>
