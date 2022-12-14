@@ -31,8 +31,8 @@ export default function AddEvento(){
         req: String
     })
     if(loading) return (<p>cargando...</p>)
-    if(error) return (<p>error</p>)
-    if(data) return (<p>creado</p>)
+    if(error) return (<p>Error</p>)
+    if(data) return (<p>Creado</p>)
     
     return(
         <form onSubmit={e =>{

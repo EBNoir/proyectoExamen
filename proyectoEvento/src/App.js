@@ -18,7 +18,7 @@ const GET_EVENTOS = gql`
 function App(){
     const {loading, error, data}= useQuery(GET_EVENTOS);
     if (loading) return (<p>cargando...</p>)
-    if (error) return (<p>Errores</p>)
+    if (error) return (<p>Error</p>)
     return(
         <div className='container'>
             <div className='row'>{
