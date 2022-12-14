@@ -7,12 +7,14 @@ const ADD_EVENTO = gql`
         $titulo: String!
         $descripcion: String!
         $imagen: String!
+        $fecha: String!
     ){
-        addEvento(input: {titulo: $titulo, descripcion: $descripcion, imagen: $imagen}){
+        addEvento(input: {titulo: $titulo, descripcion: $descripcion, imagen: $imagen, fecha: $fecha}){
             id
             titulo
             descripcion
             imagen
+            fecha
         }
     }
 `
@@ -22,7 +24,8 @@ export default function AddEvento(){
     const[formState, SetFormState] = React.useState({
         titulo: String,
         descripcion: String,
-        imagen: String
+        imagen: String,
+        fecha: String
     })
     if(loading) return (<p>cargando...</p>)
     if(error) return (<p>error</p>)
@@ -49,6 +52,13 @@ export default function AddEvento(){
                 <div className='col-6'>
                     <input value = {formState.descripcion} onChange={e =>
                         SetFormState({...formState, descripcion: e.target.value})} type="text"/>
+                </div>
+            </div>
+            <div className='row'>
+                <div className='col-6'> FECHA </div>
+                <div className='col-6'>
+                    <input value = {formState.fecha} onChange={e =>
+                        SetFormState({...formState, fecha: e.target.value})} type="text"/>
                 </div>
             </div>
             <div className='row'>

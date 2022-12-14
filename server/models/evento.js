@@ -3,7 +3,8 @@ const mongoose = require('mongoose');
 const eventoSchema = new mongoose.Schema({
     titulo: String,
     descripcion: String,
-    imagen: String
+    imagen: String,
+    fecha: String
 });
 
 module.exports = mongoose.model('Evento', eventoSchema);
